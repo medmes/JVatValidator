@@ -2,7 +2,7 @@
 ## About
 This is a standalone Java library for VAT Information Exchange System (VIES) formal validation. It doesn't connect to any web service. It can be used to verify that an input value is a valid VAT number with respect of the formal rules of a certain country.
 
-<b><u>Important</u><br>This library does not verify that the input value is truly assigned to a certain company or organisation.
+<b><i>Important</i><br>This library does not verify that the input value is truly assigned to a certain company or organisation.
 
 ## Usage
 This will validate 11198699 value against Romanian VAT patterns:
