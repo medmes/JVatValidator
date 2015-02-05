@@ -10,3 +10,6 @@ This will validate 11198699 value against Romanian VAT patterns:
 boolean isValid = VatValidator.validate("RO", "11198699");
 </pre>
 The first argument is the ISO-3166 country code, the second one is the value to be validated.
+
+## Acknowledgement
+The validation source is a Javascript file found <a href="http://www.braemoor.co.uk/software/vat.shtml">here</a>
