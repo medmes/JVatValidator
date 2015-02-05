@@ -1,6 +1,6 @@
 # JVatValidator
 ## About
-This is a standalone Java library for VAT Information Exchange System (VIES) formal validation. It doesn't connect to any web service. It can be used to verify if an input value is a valid VAT number with respect of the formal rules of a certain country.
+This is a standalone Java library for VAT (Value-Added Tax) number formal validation. It doesn't connect to any web service. It can be used to verify if an input value is a valid VAT number with respect of the formal rules of a certain country.
 
 <b><i>Important</i><br>This library does not verify if the input value is truly assigned to a certain company or organisation.
 
