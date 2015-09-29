@@ -15,6 +15,9 @@
  ******************************************************************************/
 package ro.go.kpaxplanet.vat.validator.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,6 +28,8 @@ import java.util.regex.Pattern;
  * 
  */
 public class IE extends AbstractVatFormalValidator  {
+	private static final Logger logger = LoggerFactory.getLogger(IE.class);
+
 	private static Pattern TYPE_ONE_PATTERN = Pattern.compile("^\\d[A-Z\\*\\+]");
 	
 	@Override
@@ -41,7 +46,7 @@ public class IE extends AbstractVatFormalValidator  {
 			vatNumber = "0" + vatNumber.substring(2, 7) + vatNumber.substring(0, 1) + vatNumber.substring(7, 8);
 		}
 
-		System.out.println("New format vatNumber " + vatNumber);
+		logger.debug("New format vatNumber " + vatNumber);
 		
 		// Extract the next digit and multiply by the counter.
 		for (int i = 0; i < 7; i++) {
@@ -80,8 +85,13 @@ public class IE extends AbstractVatFormalValidator  {
 	}
 
 	public static void main(String[] args) {
-		Pattern pattern = Pattern.compile("^\\d[A-Z\\*\\+]");
-		Matcher m = pattern.matcher("8Z49289F");
-		System.out.println(m.find());
+		Logger logger = LoggerFactory.getLogger(IE.class);
+
+		logger.trace("Hello World");
+		logger.debug("Hello World");
+		logger.info("Hello World");
+		logger.warn("Hello World");
+		logger.error("Hello World");
 	}
+
 }

@@ -17,18 +17,22 @@ package ro.go.kpaxplanet.vat.validator.impl;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ro.go.kpaxplanet.vat.validator.DigitValidator;
 import ro.go.kpaxplanet.vat.validator.VatFormalValidator;
 
 public abstract class AbstractVatFormalValidator extends AbstractRegexValidator implements VatFormalValidator, DigitValidator {
-	
+
+	private final Logger logger = LoggerFactory.getLogger(AbstractVatFormalValidator.class);
+
 	@Override
 	public boolean validate(String vatNumber) {
-		System.out.println("Vat number to formal validate [" + vatNumber + "]");
+		logger.debug("Vat number to formal validate [" + vatNumber + "]");
 		if (validateRegex(vatNumber)) {
 			return validateDigits(vatNumber);
 		} else {
-			System.out.println("Doesn't match any of the regex array: " + Arrays.toString(getRegexArray()));
+			logger.debug("Doesn't match any of the regex array: " + Arrays.toString(getRegexArray()));
 			return false;
 		}
 	}

@@ -15,15 +15,20 @@
  ******************************************************************************/
 package ro.go.kpaxplanet.vat.validator.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ro.go.kpaxplanet.vat.validator.RegexValidator;
 
 public abstract class AbstractRegexValidator implements RegexValidator {
+	private final Logger logger = LoggerFactory.getLogger(AbstractVatFormalValidator.class);
+
 	/* (non-Javadoc)
 	 * @see ro.go.kpaxplanet.vat.validator.RegexValidator#validateRegex(java.lang.String)
 	 */
 	@Override
 	public boolean validateRegex(String value) {
 		for (String regex : getRegexArray()) {
+			logger.debug("Validate against regex: {}", regex);
 			if (value.matches(regex)) {
 				return true;
 			}

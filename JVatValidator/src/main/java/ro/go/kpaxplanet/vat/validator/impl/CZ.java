@@ -16,6 +16,9 @@
 package ro.go.kpaxplanet.vat.validator.impl;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Czech VAT number validator.
  * 
@@ -23,6 +26,7 @@ package ro.go.kpaxplanet.vat.validator.impl;
  * 
  */
 public class CZ extends AbstractVatFormalValidator {
+	private final Logger logger = LoggerFactory.getLogger(CZ.class);
 
 	@Override
 	public boolean validateDigits(String vatNumber) {
@@ -40,7 +44,7 @@ public class CZ extends AbstractVatFormalValidator {
 
 		// Legal entities
 		if (vatNumber.matches(czexp[0])) {
-			System.out.println("CZ: Legal entities");
+			logger.debug("CZ: Legal entities");
 			// Extract the next digit and multiply by the counter.
 			for (int i = 0; i < 7; i++)
 				total += Integer.parseInt(vatNumber.substring(i, i + 1)) * multipliers[i];
@@ -59,13 +63,13 @@ public class CZ extends AbstractVatFormalValidator {
 
 		// Individuals type 1
 		else if (vatNumber.matches(czexp[1])) {
-			System.out.println("CZ: Individuals type 1");
+			logger.debug("CZ: Individuals type 1");
 			return !(Integer.parseInt(vatNumber.substring(0, 2)) > 53);
 		}
 
 		// Individuals type 2
 		else if (vatNumber.matches(czexp[2])) {
-			System.out.println("CZ: Individuals type 2");
+			logger.debug("CZ: Individuals type 2");
 			// Extract the next digit and multiply by the counter.
 			for (int i = 0; i < 7; i++)
 				total += Integer.parseInt(vatNumber.substring(i + 1, i + 2)) * multipliers[i];
@@ -84,7 +88,7 @@ public class CZ extends AbstractVatFormalValidator {
 
 		// Individuals type 3
 		else if (vatNumber.matches(czexp[3])) {
-			System.out.println("CZ: Individuals type 3");
+			logger.debug("CZ: Individuals type 3");
 			int temp = Integer.parseInt(vatNumber.substring(0, 2)) + Integer.parseInt(vatNumber.substring(2, 4))
 					+ Integer.parseInt(vatNumber.substring(4, 6)) + Integer.parseInt(vatNumber.substring(6, 8))
 					+ Integer.parseInt(vatNumber.substring(8));
