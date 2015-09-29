@@ -84,14 +84,4 @@ public class IE extends AbstractVatFormalValidator  {
 		return new String[]{"^(\\d{7}[A-W])$", "^([7-9][A-Z\\*\\+)]\\d{5}[A-W])$", "^(\\d{7}[A-W][AH])$"};
 	}
 
-	public static void main(String[] args) {
-		Logger logger = LoggerFactory.getLogger(IE.class);
-
-		logger.trace("Hello World");
-		logger.debug("Hello World");
-		logger.info("Hello World");
-		logger.warn("Hello World");
-		logger.error("Hello World");
-	}
-
 }
