@@ -112,6 +112,12 @@ public class VatValidationTest extends BaseVatValidationTest {
 	}
 
 	@Test
+	public void testValidateCHE_OK2() {
+		logger.debug("Testing CHE OK");
+		assertTrue(VatValidator.validate("CHE", "105.835.768 TVA"));
+	}
+
+	@Test
 	public void testValidateCY_OK() {
 		logger.debug("Testing VY OK");
 		assertTrue(VatValidator.validate("CY", "00532445O"));
