@@ -45,7 +45,7 @@ public class FR extends AbstractVatFormalValidator  {
 
 	@Override
 	public String[] getRegexArray() {
-		return new String[]{"^(\\d{11})$", "^([(A-H)|(J-N)|(P-Z)]\\d{10})$", "^(\\d[(A-H)|(J-N)|(P-Z)]\\d{9})$", "^([(A-H)|(J-N)|(P-Z)]{2}\\d{9})$"};
+		return new String[]{"^(\\d{14})$","^(\\d{11})$", "^([(A-H)|(J-N)|(P-Z)]\\d{10})$", "^(\\d[(A-H)|(J-N)|(P-Z)]\\d{9})$", "^([(A-H)|(J-N)|(P-Z)]{2}\\d{9})$"};
 	}
 
 }
