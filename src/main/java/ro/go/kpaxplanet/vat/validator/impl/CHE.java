@@ -49,7 +49,7 @@ public class CHE extends AbstractVatFormalValidator {
 
 	@Override
 	public String[] getRegexArray() {
-		return new String[]{"^(\\d{9})(MWST)?$"};
+		return new String[]{"^(\\d{9})(MWST|TVA|IVA)?$"};
 	}
 
 }
