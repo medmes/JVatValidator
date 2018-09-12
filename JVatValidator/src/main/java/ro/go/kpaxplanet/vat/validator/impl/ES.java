@@ -15,7 +15,6 @@
  ******************************************************************************/
 package ro.go.kpaxplanet.vat.validator.impl;
 
-
 /**
  * Spanish VAT number validator.
  * 
@@ -23,7 +22,6 @@ package ro.go.kpaxplanet.vat.validator.impl;
  * 
  */
 public class ES extends AbstractVatFormalValidator {
-
 	@Override
 	public boolean validateDigits(String vatNumber) {
 
@@ -84,10 +82,10 @@ public class ES extends AbstractVatFormalValidator {
 		// Personal number (NIF) (starting with numeric of Y or Z)
 		else if (vatNumber.matches(esexp[2])) {
 			String tempnumber = new String(vatNumber);
-			if (tempnumber.substring(0, 1) == "Y")
-				tempnumber = tempnumber.replace("Y", "1");
-			if (tempnumber.substring(0, 1) == "Z")
-				tempnumber = tempnumber.replace("Z", "2");
+			if (tempnumber.substring(0, 1).equals("Y"))
+				tempnumber = "1" + tempnumber.substring(1);
+			if (tempnumber.substring(0, 1).equals("Z"))
+				tempnumber = "2" + tempnumber.substring(1);
 			return tempnumber.charAt(8) == "TRWAGMYFPDXBNJZSQVHLCKE"
 					.charAt(Integer.parseInt(tempnumber.substring(0, 8)) % 23);
 		}

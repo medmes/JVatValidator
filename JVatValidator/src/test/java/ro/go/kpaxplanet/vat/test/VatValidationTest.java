@@ -388,4 +388,10 @@ public class VatValidationTest {
 		assertFalse(VatValidator.validate("SK", "5407062531"));
 	}
 
+	@Test
+	public void testValidateES_withY_OK() {
+		logger.debug("Testing ES OK");
+		assertTrue(VatValidator.validate("ES", "Y3106648Y"));
+	}
+
 }
