@@ -45,7 +45,7 @@ public class EC extends AbstractVatFormalValidator  {
 
 	@Override
 	public String[] getRegexArray() {
-		return new String[]{"^(\\d{9})$"};
+		return new String[]{"^\\d{10}(\\d{3})?$"};
 	}
 
 }
