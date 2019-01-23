@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2015 Eugen Covaci
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,6 +27,7 @@ import ro.go.kpaxplanet.vat.validator.impl.CY;
 import ro.go.kpaxplanet.vat.validator.impl.CZ;
 import ro.go.kpaxplanet.vat.validator.impl.DE;
 import ro.go.kpaxplanet.vat.validator.impl.DK;
+import ro.go.kpaxplanet.vat.validator.impl.EC;
 import ro.go.kpaxplanet.vat.validator.impl.EE;
 import ro.go.kpaxplanet.vat.validator.impl.EL;
 import ro.go.kpaxplanet.vat.validator.impl.ES;
@@ -54,7 +55,7 @@ import ro.go.kpaxplanet.vat.validator.impl.SI;
 import ro.go.kpaxplanet.vat.validator.impl.SK;
 
 /**
- * 
+ *
  * @author Eugen Covaci
  *
  */
@@ -72,6 +73,7 @@ public class VatValidator {
 		VALIDATORS_MAP.put("CZ", new CZ());
 		VALIDATORS_MAP.put("DE", new DE());
 		VALIDATORS_MAP.put("DK", new DK());
+		VALIDATORS_MAP.put("EC", new EC());
 		VALIDATORS_MAP.put("EE", new EE());
 		VALIDATORS_MAP.put("EL", new EL());
 		VALIDATORS_MAP.put("ES", new ES());
@@ -112,6 +114,7 @@ public class VatValidator {
 	 * <li>CZ</li>
 	 * <li>DE</li>
 	 * <li>DK</li>
+	 * <li>EC</li>
 	 * <li>EE</li>
 	 * <li>EL</li>
 	 * <li>ES</li>
@@ -139,7 +142,7 @@ public class VatValidator {
 	 * <li>SK</li>
 	 * <li>SE</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param countryCode
 	 *            The ISO-3166 country code.
 	 * @param vatNumber
