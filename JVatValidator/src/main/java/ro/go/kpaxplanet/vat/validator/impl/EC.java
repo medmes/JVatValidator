@@ -27,18 +27,8 @@ public class EC extends AbstractVatFormalValidator  {
 	@Override
 	public boolean validateDigits(String vatNumber) {
 
-		// check vatNumber contains only numerics
-		if (vatNumber.matches("[0-9]+")) {
-
-			// check the length of vatNumber is either 10 or 13
-			if (vatNumber.length() == 10 || vatNumber.length() == 13) {
-
-				// check if the first two characters are either 17 or 09
-				String extractFirstTwoChars = vatNumber.substring(0, 2);
-				if (extractFirstTwoChars.equals("17") || extractFirstTwoChars.equals("09")) {
-					return true;
-				}
-			}
+		if (vatNumber.matches("^(?=(?:.{10}|.{13})$)(17|09)[0-9]*$")) {
+			return true;
 		}
 		return false;
 	}
