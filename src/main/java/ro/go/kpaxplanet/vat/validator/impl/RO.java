@@ -48,7 +48,7 @@ public class RO extends AbstractVatFormalValidator  {
 
 		// Compare it with the last character of the VAT number. If it's the
 		// same, then it's valid.
-		return total == Integer.parseInt(vatNumber.substring(vatNumber.length() - 1, vatNumber.length()));
+		return total == Integer.parseInt(vatNumber.substring(vatNumber.length() - 1));
 	}
 
 	@Override

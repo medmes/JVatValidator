@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 public class IE extends AbstractVatFormalValidator  {
 	private static final Logger logger = LoggerFactory.getLogger(IE.class);
 
-	private static Pattern TYPE_ONE_PATTERN = Pattern.compile("^\\d[A-Z\\*\\+]");
+	private static final Pattern TYPE_ONE_PATTERN = Pattern.compile("^\\d[A-Z\\*\\+]");
 	
 	@Override
 	public boolean validateDigits(String vatNumber) {

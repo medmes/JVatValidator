@@ -30,7 +30,7 @@ public class RS extends AbstractVatFormalValidator  {
 		// 11-10 for check digit.
 
 		int product = 10;
-		int sum = 0;
+		int sum;
 
 		for (int i = 0; i < 8; i++) {
 
@@ -43,7 +43,7 @@ public class RS extends AbstractVatFormalValidator  {
 		}
 
 		// Now check that we have the right check digit
-		return (product + Integer.parseInt(vatNumber.substring(8, 9)) * 1) % 10 == 1;
+		return (product + Integer.parseInt(vatNumber.substring(8, 9))) % 10 == 1;
 	}
 
 	@Override

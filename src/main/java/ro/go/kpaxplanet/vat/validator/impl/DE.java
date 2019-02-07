@@ -30,8 +30,7 @@ public class DE extends AbstractVatFormalValidator {
 		// Checks the check digits of a German VAT number.
 
 		int product = 10;
-		int sum = 0;
-		int checkdigit = 0;
+		int sum;
 		for (int i = 0; i < 8; i++) {
 
 			// Extract the next digit and implement peculiar algorithm!.
@@ -42,6 +41,7 @@ public class DE extends AbstractVatFormalValidator {
 			product = (2 * sum) % 11;
 		}
 
+		int checkdigit;
 		// Establish check digit.
 		if (11 - product == 10) {
 			checkdigit = 0;

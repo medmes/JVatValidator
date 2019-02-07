@@ -26,7 +26,7 @@ public interface RegexValidator {
 	 * The regex array to match against.
 	 * @return The regex array
 	 */
-	public abstract String[] getRegexArray();
+	String[] getRegexArray();
 	
 	/**
 	 * Regex validate <code>value</code> argument against the array of patterns.
@@ -34,6 +34,6 @@ public interface RegexValidator {
 	 * @return <code>true</code> if and only if valid when matches at least one pattern of
 	 * the array of patterns returned by {@link #getRegexArray()} method.
 	 */
-	public abstract boolean validateRegex(String value);
+	boolean validateRegex(String value);
 
 }

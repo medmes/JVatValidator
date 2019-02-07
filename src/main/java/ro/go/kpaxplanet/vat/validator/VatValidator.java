@@ -61,7 +61,7 @@ import ro.go.kpaxplanet.vat.validator.impl.SK;
  */
 public class VatValidator {
 
-	private static final Map<String, VatFormalValidator> VALIDATORS_MAP = new HashMap<String, VatFormalValidator>();
+	private static final Map<String, VatFormalValidator> VALIDATORS_MAP = new HashMap<>();
 
 	//Register the predefined validators
 	static {

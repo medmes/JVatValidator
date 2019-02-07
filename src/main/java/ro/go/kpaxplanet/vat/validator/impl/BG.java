@@ -32,7 +32,6 @@ public class BG extends AbstractVatFormalValidator {
 		if (vatNumber.length() == 9) {
 
 			// Check the check digit of 9 digit Bulgarian VAT numbers.
-			int total = 0;
 
 			// First try to calculate the check digit using the first
 			// multipliers
@@ -40,14 +39,11 @@ public class BG extends AbstractVatFormalValidator {
 			for (int i = 0; i < 8; i++) {
 				temp += Integer.parseInt(vatNumber.substring(i, i + 1)) * (i + 1);
 			}
+
 			// See if we have a check digit yet
-			total = temp % 11;
+			int total = temp % 11;
 			if (total != 10) {
-				if (total == Integer.parseInt(vatNumber.substring(8))) {
-					return true;
-				} else {
-					return false;
-				}
+				return total == Integer.parseInt(vatNumber.substring(8));
 			}
 
 			// We got a modulus of 10 before so we have to keep going. Calculate
@@ -57,17 +53,15 @@ public class BG extends AbstractVatFormalValidator {
 			for (int i = 0; i < 8; i++) {
 				temp += Integer.parseInt(vatNumber.substring(i, i + 1)) * (i + 3);
 			}
+
 			// See if we have a check digit yet. If we still have a modulus of
 			// 10, set it to 0.
 			total = temp % 11;
 			if (total == 10) {
 				total = 0;
 			}
-			if (total == Integer.parseInt(vatNumber.substring(8))) {
-				return true;
-			} else {
-				return false;
-			}
+
+			return total == Integer.parseInt(vatNumber.substring(8));
 		}
 
 		// 10 digit VAT code - see if it relates to a standard physical person

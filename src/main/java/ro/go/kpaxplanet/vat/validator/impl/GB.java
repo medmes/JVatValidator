@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2015 Eugen Covaci
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,42 +18,36 @@ package ro.go.kpaxplanet.vat.validator.impl;
 
 /**
  * UK VAT number validator.
- * 
+ *
  * @author eugen covaci
- * 
+ *
  */
 public class GB extends AbstractVatFormalValidator  {
 
 	@Override
 	public boolean validateDigits(String vatNumber) {
-		
+
 		// Checks the check digits of a UK VAT number.
 
 		int[] multipliers = { 8, 7, 6, 5, 4, 3, 2 };
 
-		// Government departments
-		if ("GD".equals(vatNumber.substring(0, 2))) {
-			if (Integer.parseInt(vatNumber.substring(2, 3)) < 500)
-				return true;
-			else
-				return false;
-		}
+        // Government departments
+        if ("GD".equals(vatNumber.substring(0, 2))) {
+            return Integer.parseInt(vatNumber.substring(2, 3)) < 500;
+        }
 
-		// Health authorities
-		if ("HA".equals(vatNumber.substring(0, 2))) {
-			if (Integer.parseInt(vatNumber.substring(2, 3)) > 499)
-				return true;
-			else
-				return false;
-		}
+        // Health authorities
+        if ("HA".equals(vatNumber.substring(0, 2))) {
+            return Integer.parseInt(vatNumber.substring(2, 3)) > 499;
+        }
 
 		// Standard and commercial numbers
 		int total = 0;
 
-		// 0 VAT numbers disallowed!
-		if (Integer.parseInt(vatNumber.substring(0)) == 0) {
-			return false;
-		}
+        // 0 VAT numbers disallowed!
+        if (Integer.parseInt(vatNumber) == 0) {
+            return false;
+        }
 
 		// Check range is OK for modulus 97 calculation
 		int no = Integer.parseInt(vatNumber.substring(0, 7));
