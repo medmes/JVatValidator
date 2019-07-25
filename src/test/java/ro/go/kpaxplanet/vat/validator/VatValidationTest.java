@@ -13,26 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package ro.go.kpaxplanet.vat.test;
+package ro.go.kpaxplanet.vat.validator;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import ro.go.kpaxplanet.vat.validator.VatValidator;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class VatValidationTest {
-
-	private final Logger logger = LoggerFactory.getLogger(VatValidationTest.class);
-
-	@BeforeClass
-	public static void configureLog () {
-		System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG");
-	}
-
+public class VatValidationTest extends BaseVatValidationTest {
 	@Test
 	public void testValidateAT_OK() {
 		logger.debug("Testing AT OK");
@@ -295,12 +283,6 @@ public class VatValidationTest {
 	public void testValidateIE_OK_2() {
 		logger.debug("Testing IE OK 2");
 		assertTrue(VatValidator.validate("IE", "3628739L"));
-	}
-
-	@Test
-	public void testValidateIT_OK() {
-		logger.debug("Testing IT OK");
-		assertTrue(VatValidator.validate("IT", "00000010215"));
 	}
 
 	@Test
