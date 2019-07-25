@@ -49,8 +49,6 @@ public class RU extends AbstractVatFormalValidator  {
 		} else if (vatNumber.length() == 12) {
 			int total1 = 0;
 			int[] multipliers1 = { 7, 2, 4, 10, 3, 5, 9, 4, 6, 8, 0 };
-			int total2 = 0;
-			int[] multipliers2 = { 3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8, 0 };
 
 			for (int i = 0; i < 11; i++)
 				total1 += Integer.parseInt(vatNumber.substring(i, i + 1)) * multipliers1[i];
@@ -59,6 +57,8 @@ public class RU extends AbstractVatFormalValidator  {
 				total1 = total1 % 10;
 			}
 
+			int total2 = 0;
+			int[] multipliers2 = { 3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8, 0 };
 			for (int i = 0; i < 11; i++)
 				total2 += Integer.parseInt(vatNumber.substring(i, i + 1)) * multipliers2[i];
 			total2 = total2 % 11;
