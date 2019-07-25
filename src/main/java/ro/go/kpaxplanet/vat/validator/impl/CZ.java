@@ -75,14 +75,15 @@ public class CZ extends AbstractVatFormalValidator {
 				total += Integer.parseInt(vatNumber.substring(i + 1, i + 2)) * multipliers[i];
 
 			// Establish check digit.
-			total = 11 - total % 11;
-			if (total == 10)
-				total = 0;
-			if (total == 11)
-				total = 1;
+			int tmp;
+			if (total % 11 == 0)
+				tmp = total + 11;
+			else
+				tmp = (int) Math.ceil(total / 11.0) * 11;
+			total = tmp - total;
 
 			// Convert calculated check digit according to a lookup table;
-			int[] lookup = { 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 10 };
+			int[] lookup = { 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8 };
 			return lookup[total - 1] == Integer.parseInt(vatNumber.substring(8, 9));
 		}
 
