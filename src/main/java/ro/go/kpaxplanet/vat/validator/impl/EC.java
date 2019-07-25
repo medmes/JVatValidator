@@ -27,7 +27,7 @@ public class EC extends AbstractVatFormalValidator  {
 	@Override
 	public boolean validateDigits(String vatNumber) {
 
-		return vatNumber.matches("^(?=\\d{10,13}$)(01|09)\\d+");
+		return vatNumber.matches("^(?=\\d{10,13}$)(17|09)\\d+");
 	}
 
 	@Override
