@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright 2015 Eugen Covaci
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,14 +18,20 @@ package ro.go.kpaxplanet.vat.validator.impl;
 
 /**
  * Italian VAT number validator.
- * 
+ *
  * @author eugen covaci
- * 
+ *
  */
 public class IT extends AbstractVatFormalValidator  {
 
-	@Override
+    private static final int ALPHANUMERIC_ID_LENGTH = 16;
+
+    @Override
 	public boolean validateDigits(String vatNumber) {
+
+        // Checks alphanumeric Italian identification number (Codice Fiscale)
+
+	    if (vatNumber.length() == ALPHANUMERIC_ID_LENGTH) return true;
 
 		// Checks the check digits of an Italian VAT number.
 
@@ -64,7 +70,7 @@ public class IT extends AbstractVatFormalValidator  {
 
 	@Override
 	public String[] getRegexArray() {
-		return new String[]{"^(\\d{11})$"};
+	    return new String[]{"^(\\d{11})$", "^([A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z])$"};
 	}
 
 }

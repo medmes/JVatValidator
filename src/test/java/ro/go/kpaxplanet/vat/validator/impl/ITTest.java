@@ -1,16 +1,18 @@
 package ro.go.kpaxplanet.vat.validator.impl;
 
 import org.junit.Test;
-import ro.go.kpaxplanet.vat.validator.BaseVatValidationTest;
-import ro.go.kpaxplanet.vat.validator.VatValidator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-public class ITTest extends BaseVatValidationTest {
+public class ITTest {
     @Test
-    public void testValidateIT_OK() {
-        logger.debug("Testing IT OK");
-        assertTrue(VatValidator.validate("IT", "00000010215"));
+    public void testValidateIT_Numeric() {
+        assertTrue(new IT().validate("00000010215"));
+    }
+
+    @Test
+    public void testValidateIT_Alphanumeric() {
+        assertTrue(new IT().validate("CLMCLL78C65F205U"));
     }
 }
 
