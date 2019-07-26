@@ -21,23 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class VatValidationTest extends BaseVatValidationTest {
-	@Test
-	public void testValidateAT_OK() {
-		logger.debug("Testing AT OK");
-		assertTrue(VatValidator.validate("AT", "U10223006"));
-	}
-
-	@Test
-	public void testValidateAT_KO_1() {
-		logger.debug("Testing AT KO 1");
-		assertFalse(VatValidator.validate("AT", "U10223106"));
-	}
-
-	@Test
-	public void testValidateAT_KO_2() {
-		logger.debug("Testing AT KO 2");
-		assertFalse(VatValidator.validate("AT", "10223006"));
-	}
 
 	@Test
 	public void testValidateBE_OK() {
