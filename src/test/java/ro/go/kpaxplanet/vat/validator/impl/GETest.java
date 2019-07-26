@@ -13,7 +13,7 @@ public class GETest {
     }
 
     @Test
-    public void testNotValidatePE() {
+    public void testNotValidateGE() {
         assertFalse(new GE().validate("12345678A"));
     }
 }
