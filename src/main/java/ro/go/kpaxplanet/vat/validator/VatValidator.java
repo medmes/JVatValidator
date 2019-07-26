@@ -19,40 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import ro.go.kpaxplanet.vat.validator.impl.AT;
-import ro.go.kpaxplanet.vat.validator.impl.BE;
-import ro.go.kpaxplanet.vat.validator.impl.BG;
-import ro.go.kpaxplanet.vat.validator.impl.CHE;
-import ro.go.kpaxplanet.vat.validator.impl.CY;
-import ro.go.kpaxplanet.vat.validator.impl.CZ;
-import ro.go.kpaxplanet.vat.validator.impl.DE;
-import ro.go.kpaxplanet.vat.validator.impl.DK;
-import ro.go.kpaxplanet.vat.validator.impl.EC;
-import ro.go.kpaxplanet.vat.validator.impl.EE;
-import ro.go.kpaxplanet.vat.validator.impl.EL;
-import ro.go.kpaxplanet.vat.validator.impl.ES;
-import ro.go.kpaxplanet.vat.validator.impl.EU;
-import ro.go.kpaxplanet.vat.validator.impl.FI;
-import ro.go.kpaxplanet.vat.validator.impl.FR;
-import ro.go.kpaxplanet.vat.validator.impl.GB;
-import ro.go.kpaxplanet.vat.validator.impl.HR;
-import ro.go.kpaxplanet.vat.validator.impl.HU;
-import ro.go.kpaxplanet.vat.validator.impl.IE;
-import ro.go.kpaxplanet.vat.validator.impl.IT;
-import ro.go.kpaxplanet.vat.validator.impl.LT;
-import ro.go.kpaxplanet.vat.validator.impl.LU;
-import ro.go.kpaxplanet.vat.validator.impl.LV;
-import ro.go.kpaxplanet.vat.validator.impl.MT;
-import ro.go.kpaxplanet.vat.validator.impl.NL;
-import ro.go.kpaxplanet.vat.validator.impl.NO;
-import ro.go.kpaxplanet.vat.validator.impl.PL;
-import ro.go.kpaxplanet.vat.validator.impl.PT;
-import ro.go.kpaxplanet.vat.validator.impl.RO;
-import ro.go.kpaxplanet.vat.validator.impl.RS;
-import ro.go.kpaxplanet.vat.validator.impl.RU;
-import ro.go.kpaxplanet.vat.validator.impl.SE;
-import ro.go.kpaxplanet.vat.validator.impl.SI;
-import ro.go.kpaxplanet.vat.validator.impl.SK;
+import ro.go.kpaxplanet.vat.validator.impl.*;
 
 /**
  *
@@ -66,9 +33,11 @@ public class VatValidator {
 	//Register the predefined validators
 	static {
 		VALIDATORS_MAP.put("AT", new AT());
+		VALIDATORS_MAP.put("AR", new AR());
 		VALIDATORS_MAP.put("BE", new BE());
 		VALIDATORS_MAP.put("BG", new BG());
 		VALIDATORS_MAP.put("CHE", new CHE());
+		VALIDATORS_MAP.put("CL", new CL());
 		VALIDATORS_MAP.put("CY", new CY());
 		VALIDATORS_MAP.put("CZ", new CZ());
 		VALIDATORS_MAP.put("DE", new DE());
@@ -81,7 +50,8 @@ public class VatValidator {
 		VALIDATORS_MAP.put("FI", new FI());
 		VALIDATORS_MAP.put("FR", new FR());
 		VALIDATORS_MAP.put("GB", new GB());
-		VALIDATORS_MAP.put("GR", new EL());
+        VALIDATORS_MAP.put("GE", new GE());
+        VALIDATORS_MAP.put("GR", new EL());
 		VALIDATORS_MAP.put("HR", new HR());
 		VALIDATORS_MAP.put("HU", new HU());
 		VALIDATORS_MAP.put("IE", new IE());
@@ -92,6 +62,7 @@ public class VatValidator {
 		VALIDATORS_MAP.put("MT", new MT());
 		VALIDATORS_MAP.put("NL", new NL());
 		VALIDATORS_MAP.put("NO", new NO());
+		VALIDATORS_MAP.put("PE", new PE());
 		VALIDATORS_MAP.put("PL", new PL());
 		VALIDATORS_MAP.put("PT", new PT());
 		VALIDATORS_MAP.put("RO", new RO());
@@ -100,6 +71,7 @@ public class VatValidator {
 		VALIDATORS_MAP.put("SI", new SI());
 		VALIDATORS_MAP.put("SK", new SK());
 		VALIDATORS_MAP.put("SE", new SE());
+		VALIDATORS_MAP.put("TR", new TR());
 	}
 
 	/**
@@ -107,9 +79,11 @@ public class VatValidator {
 	 * for <code>countryCode</code> are:
 	 * <ul>
 	 * <li>AT</li>
+	 * <li>AR</li>
 	 * <li>BE</li>
 	 * <li>BG</li>
 	 * <li>CHE</li>
+	 * <li>CL</li>
 	 * <li>CY</li>
 	 * <li>CZ</li>
 	 * <li>DE</li>
@@ -122,6 +96,7 @@ public class VatValidator {
 	 * <li>FI</li>
 	 * <li>FR</li>
 	 * <li>GB</li>
+	 * <li>GE</li>
 	 * <li>GR</li>
 	 * <li>HR</li>
 	 * <li>HU</li>
@@ -133,6 +108,7 @@ public class VatValidator {
 	 * <li>MT</li>
 	 * <li>NL</li>
 	 * <li>NO</li>
+	 * <li>PE</li>
 	 * <li>PL</li>
 	 * <li>PT</li>
 	 * <li>RO</li>
@@ -141,6 +117,7 @@ public class VatValidator {
 	 * <li>SI</li>
 	 * <li>SK</li>
 	 * <li>SE</li>
+	 * <li>TR</li>
 	 * </ul>
 	 *
 	 * @param countryCode
