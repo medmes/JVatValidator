@@ -44,14 +44,14 @@ public class VatValidator {
 		VALIDATORS_MAP.put("DK", new DK());
 		VALIDATORS_MAP.put("EC", new EC());
 		VALIDATORS_MAP.put("EE", new EE());
-		VALIDATORS_MAP.put("EL", new EL());
+		VALIDATORS_MAP.put("EL", new EL()); // Greece
 		VALIDATORS_MAP.put("ES", new ES());
 		VALIDATORS_MAP.put("EU", new EU());
 		VALIDATORS_MAP.put("FI", new FI());
 		VALIDATORS_MAP.put("FR", new FR());
 		VALIDATORS_MAP.put("GB", new GB());
-        VALIDATORS_MAP.put("GE", new GE());
-        VALIDATORS_MAP.put("GR", new EL());
+		VALIDATORS_MAP.put("GE", new GE());
+		VALIDATORS_MAP.put("GR", new EL()); // Greece as well
 		VALIDATORS_MAP.put("HR", new HR());
 		VALIDATORS_MAP.put("HU", new HU());
 		VALIDATORS_MAP.put("IE", new IE());

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class GETest {
 
     @Test
-    public void testValidateGE_9DigitisNumeric() {
+    public void testValidateGE_9DigitsNumeric() {
         assertTrue(new GE().validate("123456789"));
     }
 

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class TRTest {
 
     @Test
-    public void testValidateTR_10DigitisNumeric() {
+    public void testValidateTR_10DigitsNumeric() {
         assertTrue(new TR().validate("1234567890"));
     }
 

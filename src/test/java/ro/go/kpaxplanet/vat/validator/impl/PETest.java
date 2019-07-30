@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class PETest {
 
     @Test
-    public void testValidatePE_11DigitisNumeric() {
+    public void testValidatePE_11DigitsNumeric() {
         assertTrue(new PE().validate("12345678901"));
     }
 

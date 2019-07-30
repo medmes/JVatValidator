@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class ARTest {
     @Test
-    public void testValidateAR_11DigitisNumeric() {
+    public void testValidateAR_11DigitsNumeric() {
         assertTrue(new AR().validate("12345678901"));
     }
 
