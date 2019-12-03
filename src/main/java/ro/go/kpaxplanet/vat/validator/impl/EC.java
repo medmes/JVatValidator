@@ -24,10 +24,11 @@ package ro.go.kpaxplanet.vat.validator.impl;
  */
 public class EC extends AbstractVatFormalValidator  {
 
+    // Ecuador
+
 	@Override
 	public boolean validateDigits(String vatNumber) {
-
-		return vatNumber.matches("^(?=\\d{10,13}$)(17|09)\\d+");
+		return true;
 	}
 
 	@Override
