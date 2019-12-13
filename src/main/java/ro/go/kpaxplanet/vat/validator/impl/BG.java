@@ -68,7 +68,7 @@ public class BG extends AbstractVatFormalValidator {
 		if (vatNumber.matches("^\\d\\d[0-5]\\d[0-3]\\d\\d{4}$")) {
 			// Check month
 			int month = Integer.parseInt(vatNumber.substring(2, 4));
-			if ((month > 0 && month < 13) || (month > 20 & month < 33)) {
+			if ((month > 0 && month < 13) || (month > 20 && month < 33)) {
 
 				// Extract the next digit and multiply by the counter.
 				int[] multipliers = { 2, 4, 8, 5, 10, 9, 7, 3, 6 };

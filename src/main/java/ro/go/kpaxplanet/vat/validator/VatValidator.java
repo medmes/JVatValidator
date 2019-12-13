@@ -72,6 +72,7 @@ public class VatValidator {
 		VALIDATORS_MAP.put("SK", new SK());
 		VALIDATORS_MAP.put("SE", new SE());
 		VALIDATORS_MAP.put("TR", new TR());
+		VALIDATORS_MAP.put("MA", new MA());
 	}
 
 	/**
@@ -118,6 +119,7 @@ public class VatValidator {
 	 * <li>SK</li>
 	 * <li>SE</li>
 	 * <li>TR</li>
+	 * <li>MA</li>
 	 * </ul>
 	 *
 	 * @param countryCode

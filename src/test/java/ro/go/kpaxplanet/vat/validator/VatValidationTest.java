@@ -69,7 +69,8 @@ public class VatValidationTest extends BaseVatValidationTest {
                 "SI",
                 "SK",
                 "SE",
-                "TR"
+                "TR",
+                "MA"
         ));
         assertEquals(VatValidator.getAcceptedCountries(), countries);
     }
@@ -440,4 +441,16 @@ public class VatValidationTest extends BaseVatValidationTest {
         assertTrue(VatValidator.validate("ES", "Y3106648Y"));
     }
 
+    @Test
+    public void testValidateMA_withMA_OK() {
+        logger.debug("Testing MA OK");
+        assertTrue(VatValidator.validate("MA", "12345678"));
+    }
+
+
+    @Test
+    public void testValidateMA_KO() {
+        logger.debug("Testing MA KO");
+        assertFalse(VatValidator.validate("MA", "1234567"));
+    }
 }
